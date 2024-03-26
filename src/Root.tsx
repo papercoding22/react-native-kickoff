@@ -6,6 +6,8 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import App from './App';
 import {store} from './store';
 
+import './translations';
+
 const queryClient = new QueryClient();
 
 function Root() {
