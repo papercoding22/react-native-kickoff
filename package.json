@@ -11,7 +11,8 @@
     "test:watch": "jest --watch",
     "type-check": "tsc",
     "test:report": "jest --collectCoverage --coverageDirectory=\"./coverage\" --ci --reporters=default --reporters=jest-junit --coverage",
-    "pod-install": "npx pod-install"
+    "pod-install": "npx pod-install",
+    "clean-node": "rm -rf node_modules/ && yarn cache clean && yarn install"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.17",
