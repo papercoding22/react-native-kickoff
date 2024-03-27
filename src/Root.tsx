@@ -7,6 +7,7 @@ import App from './App';
 import {store} from './store';
 
 import './translations';
+import {ServiceProvider} from './providers';
 
 const queryClient = new QueryClient();
 
@@ -16,7 +17,9 @@ function Root() {
       <NavigationContainer>
         <Provider store={store}>
           <QueryClientProvider client={queryClient}>
-            <App />
+            <ServiceProvider>
+              <App />
+            </ServiceProvider>
           </QueryClientProvider>
         </Provider>
       </NavigationContainer>
