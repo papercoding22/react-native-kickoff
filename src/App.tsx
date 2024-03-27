@@ -16,7 +16,6 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import {useTranslation} from 'react-i18next';
 
 import {
   Colors,
@@ -25,39 +24,10 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+import {UserProfile} from '@/features/user-profile';
+import {Section} from '@/components';
 
 const App = () => {
-  const {t} = useTranslation(['example']);
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -78,13 +48,7 @@ const App = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Author">
-            <Text>
-              {t('example:helloUser', {
-                name: 'John',
-              })}
-            </Text>
-          </Section>
+          <UserProfile />
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
