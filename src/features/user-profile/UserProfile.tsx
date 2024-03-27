@@ -27,7 +27,7 @@ export default function UserProfile() {
     <Section title="Author">
       <Text>
         {t('example:helloUser', {
-          name: data?.name,
+          name: data?.name || '...',
         })}
       </Text>
     </Section>
