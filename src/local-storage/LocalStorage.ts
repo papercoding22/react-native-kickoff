@@ -19,6 +19,10 @@ class LocalStorage {
     this.mmkv.delete(key);
   }
 
+  contains(key: string): boolean {
+    return this.mmkv.contains(key);
+  }
+
   clearAll() {
     this.mmkv.clearAll();
   }

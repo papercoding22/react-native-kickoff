@@ -13,6 +13,7 @@
     "test:report": "jest --collectCoverage --coverageDirectory=\"./coverage\" --ci --reporters=default --reporters=jest-junit --coverage",
     "test:ci": "yarn run test --coverage",
     "pod-install": "npx pod-install",
+    "prettier": "prettier --write src/**/*.ts src/**/*.tsx",
     "clean-node": "rm -rf node_modules/ && yarn cache clean && yarn install"
   },
   "dependencies": {
