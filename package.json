@@ -14,9 +14,11 @@
     "test:ci": "yarn run test --coverage",
     "pod-install": "npx pod-install",
     "prettier": "prettier --write src/**/*.ts src/**/*.tsx",
-    "clean-node": "rm -rf node_modules/ && yarn cache clean && yarn install"
+    "clean-node": "rm -rf node_modules/ && yarn cache clean && yarn install",
+    "launch-ios-simulator": "xcrun simctl boot 'iPhone 15 Pro'"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
     "@reduxjs/toolkit": "^2.2.2",

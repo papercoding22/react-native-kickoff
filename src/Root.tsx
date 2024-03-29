@@ -12,6 +12,7 @@ import {ServiceProvider} from './providers';
 
 import './translations';
 import {LocalStorage} from './local-storage';
+import AppNavigator from './navigation/AppNavigator';
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,7 @@ function Root() {
             <ErrorBoundary>
               <ServiceProvider>
                 <ThemeProvider storage={LocalStorage}>
-                  <App />
+                  <AppNavigator />
                 </ThemeProvider>
               </ServiceProvider>
             </ErrorBoundary>
