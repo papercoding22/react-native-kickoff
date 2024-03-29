@@ -6,7 +6,6 @@ import ErrorBoundary from 'react-native-error-boundary';
 
 import {ThemeProvider} from '@/theme';
 
-import App from './App';
 import {store} from './store';
 import {ServiceProvider} from './providers';
 

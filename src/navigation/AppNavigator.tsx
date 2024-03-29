@@ -18,6 +18,11 @@ function ModalScreen() {
   );
 }
 
+/**
+ * Root navigator of the app.
+ *
+ * @returns {React.ReactElement} Root navigator.
+ */
 function AppNavigator() {
   return (
     <RootStack.Navigator>
