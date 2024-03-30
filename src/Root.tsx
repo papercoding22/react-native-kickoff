@@ -3,11 +3,12 @@ import {Provider} from 'react-redux';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import ErrorBoundary from 'react-native-error-boundary';
 
-import {store} from './store';
-import {ServiceProvider} from './providers';
-import AppNavigator from './navigation/AppNavigator';
+import ThemeProvider from '@/theme/ThemeProvider';
+import {store} from '@/store';
+import {ServiceProvider} from '@/providers';
+import AppNavigator from '@/navigation/AppNavigator';
 
-import './translations';
+import '@/translations';
 
 const queryClient = new QueryClient();
 
@@ -17,7 +18,9 @@ function Root() {
       <QueryClientProvider client={queryClient}>
         <ErrorBoundary>
           <ServiceProvider>
-            <AppNavigator />
+            <ThemeProvider>
+              <AppNavigator />
+            </ThemeProvider>
           </ServiceProvider>
         </ErrorBoundary>
       </QueryClientProvider>
