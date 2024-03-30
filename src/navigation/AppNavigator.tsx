@@ -1,10 +1,15 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  DefaultTheme,
+  NavigationContainer,
+  Theme,
+} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import BottomTabNavigator from './BottomTabNavigator';
 import {Button, Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import useTheme from '@/theme/useTheme';
 
 const RootStack = createNativeStackNavigator();
 
@@ -25,8 +30,17 @@ function ModalScreen() {
  * @returns {React.ReactElement} Root navigator.
  */
 function AppNavigator() {
+  const theme = useTheme();
+  const overridedTheme: Theme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: theme.colors.primary,
+    },
+  };
+
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={overridedTheme}>
       <RootStack.Navigator>
         <RootStack.Group screenOptions={{headerShown: false}}>
           <RootStack.Screen name="Root" component={BottomTabNavigator} />

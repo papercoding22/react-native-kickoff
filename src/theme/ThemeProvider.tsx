@@ -5,8 +5,7 @@ import {Theme} from './types';
 import light from './light';
 import dark from './dark';
 
-export interface ThemeContextProps {
-  theme: Theme;
+export interface ThemeContextProps extends Theme {
   changeTheme: () => void;
 }
 
@@ -24,7 +23,7 @@ const ThemeProvider: React.FC<PropsWithChildren> = ({children}) => {
   };
 
   return (
-    <ThemeContext.Provider value={{theme, changeTheme}}>
+    <ThemeContext.Provider value={{...theme, changeTheme}}>
       {children}
     </ThemeContext.Provider>
   );
