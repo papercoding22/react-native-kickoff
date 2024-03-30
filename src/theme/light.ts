@@ -2,8 +2,8 @@ import {Theme} from './types';
 
 const light: Theme = {
   colors: {
-    primary: '#6200ee',
-    secondary: '#03dac6',
+    primary: '#F2613F',
+    secondary: '#007F73',
     error: '#B00020',
     background: '#ffffff',
     surface: '#ffffff',

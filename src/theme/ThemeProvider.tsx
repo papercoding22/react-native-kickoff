@@ -1,9 +1,15 @@
 // ThemeProvider.tsx
-import React, {PropsWithChildren, createContext, useState} from 'react';
+import React, {
+  PropsWithChildren,
+  createContext,
+  useEffect,
+  useState,
+} from 'react';
 
 import {Theme} from './types';
 import light from './light';
 import dark from './dark';
+import {useColorScheme} from 'react-native';
 
 export interface ThemeContextProps extends Theme {
   changeTheme: () => void;
@@ -14,9 +20,14 @@ export const ThemeContext = createContext<ThemeContextProps>(
 );
 
 const ThemeProvider: React.FC<PropsWithChildren> = ({children}) => {
-  const [isDark, setIsDark] = useState(false);
+  const isDarkMode = useColorScheme() === 'dark';
+  const [isDark, setIsDark] = useState(isDarkMode);
 
   const theme = isDark ? light : dark;
+
+  useEffect(() => {
+    setIsDark(isDarkMode);
+  }, [isDarkMode]);
 
   const changeTheme = () => {
     setIsDark(!isDark);

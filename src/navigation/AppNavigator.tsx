@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+  DarkTheme,
   DefaultTheme,
   NavigationContainer,
   Theme,
@@ -7,7 +8,7 @@ import {
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import BottomTabNavigator from './BottomTabNavigator';
-import {Button, Text, View} from 'react-native';
+import {Button, Text, View, useColorScheme} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import useTheme from '@/theme/useTheme';
 
@@ -30,11 +31,13 @@ function ModalScreen() {
  * @returns {React.ReactElement} Root navigator.
  */
 function AppNavigator() {
+  const scheme = useColorScheme();
   const theme = useTheme();
+  const navigationTheme = scheme === 'dark' ? DarkTheme : DefaultTheme
   const overridedTheme: Theme = {
-    ...DefaultTheme,
+    ...navigationTheme,
     colors: {
-      ...DefaultTheme.colors,
+      ...navigationTheme.colors,
       primary: theme.colors.primary,
     },
   };

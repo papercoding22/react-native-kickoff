@@ -2,8 +2,8 @@ import {Theme} from './types';
 
 const dark: Theme = {
   colors: {
-    primary: '#bb86fc',
-    secondary: '#03dac6',
+    primary: '#F2613F',
+    secondary: '#007F73',
     error: '#cf6679',
     background: '#121212',
     surface: '#121212',
