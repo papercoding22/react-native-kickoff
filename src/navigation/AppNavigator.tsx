@@ -33,7 +33,7 @@ function ModalScreen() {
 function AppNavigator() {
   const scheme = useColorScheme();
   const theme = useTheme();
-  const navigationTheme = scheme === 'dark' ? DarkTheme : DefaultTheme
+  const navigationTheme = scheme === 'dark' ? DarkTheme : DefaultTheme;
   const overridedTheme: Theme = {
     ...navigationTheme,
     colors: {
