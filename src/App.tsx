@@ -27,6 +27,8 @@ import {
 import {UserProfile} from '@/features/user-profile';
 import {Section} from '@/components';
 
+import Bower from './assets/logos/bower.svg';
+
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -48,6 +50,9 @@ const App = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
+          <View style={styles.logoContainer}>
+            <Bower width={100} height={100} />
+          </View>
           <UserProfile />
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
@@ -70,6 +75,10 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+  logoContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,

@@ -13,6 +13,7 @@
     ".eslintrc.js",
     "jest.config.js",
     "babel.config.js",
-    "index.js"
+    "index.js",
+    "declarations.d.ts",
   ]
 }
