@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import BottomTabNavigator from './BottomTabNavigator';
@@ -25,14 +26,16 @@ function ModalScreen() {
  */
 function AppNavigator() {
   return (
-    <RootStack.Navigator>
-      <RootStack.Group screenOptions={{headerShown: false}}>
-        <RootStack.Screen name="Root" component={BottomTabNavigator} />
-      </RootStack.Group>
-      <RootStack.Group screenOptions={{presentation: 'modal'}}>
-        <RootStack.Screen name="MyModal" component={ModalScreen} />
-      </RootStack.Group>
-    </RootStack.Navigator>
+    <NavigationContainer>
+      <RootStack.Navigator>
+        <RootStack.Group screenOptions={{headerShown: false}}>
+          <RootStack.Screen name="Root" component={BottomTabNavigator} />
+        </RootStack.Group>
+        <RootStack.Group screenOptions={{presentation: 'modal'}}>
+          <RootStack.Screen name="MyModal" component={ModalScreen} />
+        </RootStack.Group>
+      </RootStack.Navigator>
+    </NavigationContainer>
   );
 }
 
